@@ -3,15 +3,14 @@ package main
 import (
 	// "strings"
 	"fmt"
-	//---------------------- Windows
-	"comone/dbf"
-	//---------------------- Mac/Android/Linux
-	//"../dbf"
+
+	dbf "github.com/Com1Software/DBF-Package"
 )
-//------- (c) 2022 Com1 Software Development
+
+//------- (c) 2024 Com1 Software Development
 //----------------------------------------------------------------
 func main() {
-	fmt.Println("testdbf (c) 2022 Com1 Software Development")
+	fmt.Println("testdbf (c) 2024 Com1 Software Development")
 	testCtl := 1
 	dbffile := "csc030.dbf"
 	if dbf.CheckForFile(dbffile) {
@@ -38,8 +37,27 @@ func main() {
 					fmt.Printf("-->%s\n", dbf.GetRecord(dbfdata, i))
 				}
 			}
-			//----------------- Test for GetRecordField
+
+			//--------------------------- Detail Data Display
 		case testCtl == 1:
+			fmt.Println("-------- General Display")
+			fctl := true
+			if fctl {
+				for i := 0; i < dbf.GetFieldCount(dbfdata); i++ {
+					fmt.Printf("[%s]", dbf.GetFieldName(dbfdata, i))
+					//	fmt.Printf("--> %s\n", dbf.GetRecordField(dbfdata, dbf.GetRecord(dbfdata, i), i))
+				}
+			}
+			dctl := true
+			if dctl {
+				for i := 0; i < dbf.GetRecordCount(dbfdata); i++ {
+					fmt.Printf("-->%s\n", dbf.GetRecord(dbfdata, i))
+				}
+			}
+		//----------------- Test for GetRecordField
+
+		//----------------- Test for GetRecordField
+		case testCtl == 2:
 			fmt.Println("-------- Test for GetRecordField")
 			fmt.Printf("Display Record 0 Field 0  --> %s\n", dbf.GetRecordField(dbfdata, dbf.GetRecord(dbfdata, 0), 0))
 			fmt.Printf("Field Length >%d\n", dbf.GetFieldLength(dbfdata, 0))

@@ -11,6 +11,8 @@ Test program for the DBF Package
 
 Other DBF Packages
 
+[dbf3](https://github.com/kcasctiv/dbf3)
+
 [godbf](https://github.com/san-pang/godbf)
 
 [go-dbase](https://github.com/Valentin-Kaiser/go-dbase)

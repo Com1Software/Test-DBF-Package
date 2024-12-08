@@ -13,6 +13,6 @@ Other DBF Packages
 
 [go-dbase](https://github.com/Valentin-Kaiser/go-dbase)
 
-[go-dbf]https://github.com/LindsayBradford/go-dbf)
+[go-dbf](https://github.com/LindsayBradford/go-dbf)
 
 [go-foxpro-dbf](https://github.com/SebastiaanKlippert/go-foxpro-dbf)

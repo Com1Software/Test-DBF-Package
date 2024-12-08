@@ -8,3 +8,11 @@ Test program for the DBF Package
 [Go Playground for Programmers](https://github.com/Com1Software/Go-Playground-for-Programmers)
 
 [DBU](https://github.com/Com1Software/DBU)
+
+Other DBF Packages
+
+[go-dbase](https://github.com/Valentin-Kaiser/go-dbase)
+
+[go-dbf]https://github.com/LindsayBradford/go-dbf)
+
+[go-foxpro-dbf](https://github.com/SebastiaanKlippert/go-foxpro-dbf)

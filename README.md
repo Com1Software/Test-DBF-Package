@@ -7,4 +7,4 @@ Test program for the DBF Package
 
 [Go Playground for Programmers](https://github.com/Com1Software/Go-Playground-for-Programmers)
 
-[DBU}(https://github.com/Com1Software/DBU)
+[DBU](https://github.com/Com1Software/DBU)

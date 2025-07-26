@@ -7,12 +7,14 @@ import (
 	dbf "github.com/Com1Software/DBF-Package"
 )
 
-//------- (c) 2024 Com1 Software Development
-//----------------------------------------------------------------
+// ------- (c) 2024 Com1 Software Development
+// ----------------------------------------------------------------
 func main() {
 	fmt.Println("testdbf (c) 2024 Com1 Software Development")
-	testCtl := 1
+	testCtl := 0
 	dbffile := "csc030.dbf"
+	//dbffile := "TAGS.DBF"
+	// dbffile := "VIDEOS.DBF"
 	if dbf.CheckForFile(dbffile) {
 		dbfdata := dbf.LoadFile(dbffile)
 		fmt.Printf("Number of Records in Table = %d\n", dbf.GetRecordCount(dbfdata))
@@ -26,9 +28,11 @@ func main() {
 			fctl := true
 			if fctl {
 				for i := 0; i < dbf.GetFieldCount(dbfdata); i++ {
-					fmt.Printf("-->%s\n", dbf.GetFieldName(dbfdata, i))
-					fmt.Printf("-->%d\n", dbf.GetFieldLength(dbfdata, i))
-					fmt.Printf("--> %s\n", dbf.GetRecordField(dbfdata, dbf.GetRecord(dbfdata, i), i))
+					fmt.Printf("-Field# %d FieldName->%s", i, dbf.GetFieldName(dbfdata, i))
+					fmt.Printf(" Length>%d", dbf.GetFieldLength(dbfdata, i))
+					if dbf.GetRecordCount(dbfdata) > 0 {
+						fmt.Printf("Field Data--> %s\n", dbf.GetRecordField(dbfdata, dbf.GetRecord(dbfdata, i), i))
+					}
 				}
 			}
 			dctl := false
@@ -54,7 +58,6 @@ func main() {
 					fmt.Printf("-->%s\n", dbf.GetRecord(dbfdata, i))
 				}
 			}
-		//----------------- Test for GetRecordField
 
 		//----------------- Test for GetRecordField
 		case testCtl == 2:
